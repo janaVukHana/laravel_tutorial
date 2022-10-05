@@ -14,6 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// API ROUTES
+// THIS IS HOW YOU WOULD MAKE AN API
+// Route::get('/posts', function() {
+//     return response()->json([
+//         'posts' => [
+//             'title' => 'POst 1',
+//             'desc' => 'This is post 1 desc'
+//             ]
+//         ]);
+// });
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
