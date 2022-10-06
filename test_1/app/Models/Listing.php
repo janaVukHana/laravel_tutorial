@@ -18,7 +18,7 @@ class Listing {
             [
                 'id' => 3,
                 'title' => 'Listing 3',
-                'description' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam, magni.'
+                'description' => 'lISTING 3, ipsum dolor sit amet consectetur adipisicing elit. Totam, magni.'
             ]
         ];
     }
