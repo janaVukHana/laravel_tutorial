@@ -1,3 +1,7 @@
+@extends('layout')
+
+@section('content')
+
 {{-- <h1><?php echo $heading ?></h1>
 <p><?php echo $body ?></p>
 
@@ -24,3 +28,5 @@
 <h2>No listings found!</h2>
 
 @endunless
+
+@endsection
