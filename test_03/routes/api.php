@@ -14,6 +14,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/friends', function() {
+    return response()->json([
+        'friends' => [
+            [
+                'question' => 'Chandlers roomate?',
+                'answer' => 'Jo'
+            ],
+            [
+                'question' => 'Chandlers wife?',
+                'answer' => 'Monica' 
+            ]
+        ]
+    ]);
+});
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
