@@ -7,8 +7,8 @@
         <p>No listings found</p>
     @else
         @foreach ($listings as $listing)
-            <h2>{{$listing['name']}}</h2>
-            <p>{{$listing['desc']}}</p>
+            <h2>{{$listing['title']}}</h2>
+            <p>{{$listing['description']}}</p>
             <a href='/listing/{{$listing['id']}}'>View listing</a>
         @endforeach
     @endif

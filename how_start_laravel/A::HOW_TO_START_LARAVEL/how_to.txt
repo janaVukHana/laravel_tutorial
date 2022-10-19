@@ -1,6 +1,0 @@
-1. go inside workspace or any other folder
-2. open terminal
-3. type: /home/username/.config/composer/vendor/bin/laravel new test_1
-         /home/YOUR_USERNAME/.config/composer/vendor/bin/laravel IME_PROJEKTA
-         /home/ilija/.config/composer/vendor/bin/laravel test_project
-4. in terminal: php artisan serve

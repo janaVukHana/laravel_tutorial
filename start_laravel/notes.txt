@@ -1,0 +1,24 @@
+1. go inside workspace or any other folder
+2. open terminal
+3. type: /home/username/.config/composer/vendor/bin/laravel new test_1
+         /home/YOUR_USERNAME/.config/composer/vendor/bin/laravel new IME_PROJEKTA
+         /home/ilija/.config/composer/vendor/bin/laravel new test_project
+4. in terminal: php artisan serve
+
+HOW TO MAKE ELOQUENT MODEL
+php artisan make:model MODEL_NAME
+
+HOW TO MAKE TABLE
+php artisan make:migration create_listings_table
+
+HOW TO MIGRATE
+php artisan migrate
+
+php artisan seed
+
+php artisan migrate:refresh
+
+php artisan migrate:refresh --seed
+
+HOW TO MAKE FACTORY
+php artisan make:factory ListingFactory
