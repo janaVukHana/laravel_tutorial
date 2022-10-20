@@ -22,3 +22,6 @@ php artisan migrate:refresh --seed
 
 HOW TO MAKE FACTORY
 php artisan make:factory ListingFactory
+
+HOW TO MAKE CONTROLLER
+php artisan make:controller ListingControlller

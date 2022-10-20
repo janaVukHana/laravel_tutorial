@@ -9,6 +9,9 @@ class Listing extends Model
 {
     use HasFactory;
 
+    // need this so user can submit form or values ...
+    protected $fillable = ['title', 'company', 'website', 'email', 'location', 'tags', 'description'];
+
     public function scopeFilter($query, array $filter) {
         if($filter['tag'] ?? false) {
             $query->where('tags', 'like', '%' . $filter['tag'] . '%');

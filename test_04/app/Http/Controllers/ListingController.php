@@ -12,8 +12,10 @@ class ListingController extends Controller
     }
 
     public function listings() {
+        // dd(request(['tag'])); // ovo nam daje arr 'tag' => here is what ever is in query: css, js, php, html...
+        // dd(request('tag'))    // ovo je string. here is what ever is in tag
         return view('listings', [
-            'listings' => Listing::all()
+            'listings' => Listing::latest()->filter(request(['tag', 'search']))->get()
         ]);
     }
 
