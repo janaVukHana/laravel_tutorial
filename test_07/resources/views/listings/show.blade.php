@@ -51,4 +51,17 @@
 </div>
 </div>
 
+<div class="mt-2 p-4 flex">
+    <a href="/listings/{{$listing->id}}/edit">
+        <i class="fa-solid fa-pencil"></i> Edit
+    </a>
+    <form action="/listings/{{$listing->id}}/delete" method="post">
+        @csrf
+        @method('delete')
+        <button type="submit">
+            <i class="fa-solid fa-trash"></i> Delete
+        </button>
+    </form>
+</div>
+
 </x-layout>

@@ -18,11 +18,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Get all listings
 Route::get('/listings', [ListingController::class, 'index']);
 
+// Create new listing
 Route::get('/listings/create', [ListingController::class, 'create']);
 
+// Get single listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
+// Store new listing
 Route::post('/listings', [ListingController::class, 'store']);
 
+// Edit listing
+Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
+
+// Update listing
+Route::put('/listings/{listing}', [ListingController::class, 'update']);
+
+// Delete listing
+Route::delete('/listings/{listing}/delete', [ListingController::class, 'delete']);
