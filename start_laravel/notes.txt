@@ -25,3 +25,10 @@ php artisan make:factory ListingFactory
 
 HOW TO MAKE CONTROLLER
 php artisan make:controller ListingControlller
+
+HOW TO STYLE PAGINATION
+educative.io/answers/how-to-customize-laravel-pagination-links
+php artisan vendor:publish...
+
+STORING IMAGES
+php artisan storage:link
