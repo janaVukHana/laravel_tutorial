@@ -9,7 +9,7 @@
             <p class="mb-4">Post a gig to find a developer</p>
         </header>
 
-        <form action="/listings" method="post">
+        <form action="/listings" method="post" enctype="multipart/form-data">
             @csrf
             <div class="mb-6">
                 <label

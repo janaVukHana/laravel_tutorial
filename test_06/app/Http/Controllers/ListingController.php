@@ -26,6 +26,7 @@ class ListingController extends Controller
 
     // my error required typed requred(no 'i')
     public function store(Request $request) {
+
         $formFields = $request->validate([
            'title' => 'required',
            'tags' => 'required',
@@ -35,6 +36,12 @@ class ListingController extends Controller
            'location' => 'required',
            'description' => 'required'
         ]);
+
+        if($request->hasFile('logo')) {
+            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+        }
+
+        // dd($formFields); 
 
         Listing::create($formFields);
 
