@@ -51,14 +51,14 @@
 </div>
 </div>
 
-<div class="mt-2 p-4 flex">
+<div class="mt-2 p-4 flex space-x-6">
     <a href="/listings/{{$listing->id}}/edit">
         <i class="fa-solid fa-pencil"></i> Edit
     </a>
-    <form action="/listings/{{$listing->id}}/delete" method="post">
+    <form action="/listings/{{$listing->id}}" method="post">
         @csrf
         @method('delete')
-        <button type="submit">
+        <button type="submit" class="text-red-500">
             <i class="fa-solid fa-trash"></i> Delete
         </button>
     </form>

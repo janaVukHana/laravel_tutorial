@@ -72,4 +72,6 @@ class ListingController extends Controller
 
         return redirect('/listings');
     }
+
+    
 }

@@ -5,12 +5,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="images/favicon.ico" />
-        <link 
-            rel="stylesheet" 
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" 
-            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" 
-            crossorigin="anonymous" 
-            referrerpolicy="no-referrer" 
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
         />
         <script src="https://cdn.tailwindcss.com"></script>
         <script>
@@ -33,35 +33,31 @@
             /></a>
             <ul class="flex space-x-6 mr-6 text-lg">
                 @auth
-                    <li>
-                        <p>Wellcome {{auth()->user()->name}}</p>
-                    </li>
-                    <li>
-                        <a href="/manage-listings" class="hover:text-laravel"
-                            ><i class="fa-solid fa-gear"></i> MANAGE LISTINGS</a
-                        >
-                    </li>
-                    <li>
-                        <form action="/logout" method="post">
+                <li>
+                    <p>Wellcome {{auth()->user()->name}}</p>
+                </li>
+                <li>
+                    <a href="#" class="hover:text-laravel">
+                        <i class="fa-solid fa-gear"></i> MANAGE LISTINGS
+                    </a>
+                </li>
+                <li>
+                    <form action="/logout" method="POST">
                         @csrf
-                            <button type="submit">
-                                <i class="fa-solid fa-sign-out"></i> Logout
-                            </button>
-                        </form>
-                    </li>
-                    @else
+                        <button type="submit"><i class="fa-solid fa-sign-out"></i> Logout</button>
+                    </form>
+                </li>
+                @else
                     <li>
-                        <a href="/register" class="hover:text-laravel"
-                            ><i class="fa-solid fa-user-plus"></i> Register</a
-                        >
+                        <a href="/register" class="hover:text-laravel">
+                            <i class="fa-solid fa-user-plus"></i> Register
+                        </a>
                     </li>
                     <li>
-                        <a href="/login" class="hover:text-laravel"
-                            ><i class="fa-solid fa-arrow-right-to-bracket"></i>
-                            Login</a
-                        >
+                        <a href="/login" class="hover:text-laravel">
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i> Login
+                        </a>
                     </li>
-                    
                 @endauth
             </ul>
         </nav>

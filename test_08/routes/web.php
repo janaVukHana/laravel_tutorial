@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ListingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Show all listings
+Route::get('/listings', [ListingController::class, 'index']);
+
+// Create user
+Route::get('/register', [UserController::class, 'create']);
+
+// Store user
+Route::post('/register', [UserController::class, 'store']);
+
+// Logout user
+Route::post('/logout', [UserController::class, 'logout']);
+
+// Show login form
+Route::get('/login', [UserController::class, 'login']);
+
+// Authenticate user
+Route::post('/login', [UserController::class, 'authenticate']);
