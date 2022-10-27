@@ -5,6 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="images/favicon.ico" />
+        {{-- Alpine.js --}}
+        <script src="//unpkg.com/alpinejs" defer></script>
+        {{-- Font Awesome --}}
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -12,6 +15,7 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        {{-- Tailwind --}}
         <script src="https://cdn.tailwindcss.com"></script>
         <script>
             tailwind.config = {
@@ -32,17 +36,34 @@
                 ><img class="w-24" src="{{asset('images/logo.png')}}" alt="" class="logo"
             /></a>
             <ul class="flex space-x-6 mr-6 text-lg">
-                <li>
-                    <a href="/register" class="hover:text-laravel"
-                        ><i class="fa-solid fa-user-plus"></i> Register</a
-                    >
-                </li>
-                <li>
-                    <a href="/login" class="hover:text-laravel"
-                        ><i class="fa-solid fa-arrow-right-to-bracket"></i>
-                        Login</a
-                    >
-                </li>
+                @auth
+                    <li>
+                        <p>
+                            Wellcome {{auth()->user()->name}}
+                        </p>
+                    </li>
+                    <li>
+                        <a href="/listings/manage" class="hover:text-laravel">
+                            <i class="fa-solid fa-gear"></i> MANAGE LISTINGS
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/users/logout" class="hover:text-laravel">
+                            <i class="fa-solid fa-sign-out"></i> Logout
+                        </a>
+                    </li>
+                @else
+                    <li>
+                        <a href="/users/register" class="hover:text-laravel">
+                            <i class="fa-solid fa-user-plus"></i> Register
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/users/login" class="hover:text-laravel">
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i> Login
+                        </a>
+                    </li>
+                @endauth
             </ul>
         </nav>
         <main>
@@ -59,5 +80,9 @@
                 >Post Job</a
             >
         </footer>
+        
+        {{-- Flash message --}}
+        <x-flash-message />
+        
     </body>
 </html>
